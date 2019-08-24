@@ -1,0 +1,27 @@
+n = int(input())
+s = input()
+
+if len(s)==n:
+    mylist=[]
+    for item in s:
+        mylist.append(item)
+    checksea=0
+    valley=0
+
+    for item in mylist:
+
+        if item=='U':
+            checksea+=1
+
+        elif item=='D' and checksea==0:
+            checksea-=1
+            valley+=1
+        
+        elif item=='D':
+            checksea-=1
+    
+    print(valley)
+    
+        
+    
+    
