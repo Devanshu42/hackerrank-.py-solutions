@@ -1,0 +1,18 @@
+num=int(input().strip())
+
+binarynum=bin(num)[2:]
+chklist=list()
+
+
+for item in binarynum:
+    chklist.append(int(item))
+flag=0
+flaglist=[]
+for item in chklist:
+    if item==0:
+        flag=0
+    if item==1:
+        flag+=1
+        flaglist.append(flag)
+
+print(max(flaglist))
