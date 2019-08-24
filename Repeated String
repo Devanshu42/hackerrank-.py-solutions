@@ -1,0 +1,13 @@
+s = input()
+n = int(input())
+
+result=[]
+newlist=list(s)
+totala=newlist.count('a')
+
+length=len(newlist)
+a=n//length
+b=newlist[0:n%length].count('a')
+result=(a*totala)+b
+
+print(result)
