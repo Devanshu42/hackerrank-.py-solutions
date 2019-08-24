@@ -1,0 +1,25 @@
+def is_matched(expr):
+  lefty = "({["  
+  righty = ")}]" 
+  S = []
+  for c in expr:
+    if c in lefty:
+      S.append(c)
+    elif c in righty:
+      if not S:
+        return False
+      if righty.index(c) != lefty.index(S.pop( )):
+        return False
+  if not S:
+    return True
+  else:
+    return False
+
+num_cases = int(input())
+while num_cases:
+  input_text = raw_input()
+  if (is_matched(input_text) == True):
+    print "YES"
+  else:
+    print "NO"
+  num_cases = num_cases -1
