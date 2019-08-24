@@ -1,0 +1,26 @@
+n = int(input())
+c = list(map(int, input().rstrip().split()))
+
+curpos=0
+jump=0
+flag=0
+
+
+for item in range(len(c)-2):
+    
+    if flag==0:
+        if c[item+2]==0:
+            jump+=1
+            flag=1
+            
+        elif c[item+1]==0:
+            jump+=1
+        
+    else:
+        flag=0
+        continue
+if c[len(c)-2]==0:
+    jump+=1
+
+print(jump)
+
