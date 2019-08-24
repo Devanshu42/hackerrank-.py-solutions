@@ -1,0 +1,41 @@
+class Person:
+	def __init__(self, firstName, lastName, idNumber):
+		self.firstName = firstName
+		self.lastName = lastName
+		self.idNumber = idNumber
+	def printPerson(self):
+		print("Name:", self.lastName + ",", self.firstName)
+		print("ID:", self.idNumber)
+
+class Student(Person):
+
+    def __init__(self,firstName,lastName,ID,scores):
+        self.firstName=firstName
+        self.lastName=lastName
+        self.ID=ID
+        self.scores=scores
+    
+    def calculate(self):
+        resultsum=0
+        for _ in self.scores:
+            resultsum+=_
+        asum=resultsum/numScores
+        if asum>=90 and asum<=100:
+            return 'O'
+        elif asum>=80 and asum<90:
+            return  'E'
+        elif asum>=70 and asum<80:
+            return 'A'
+        elif asum>=55 and asum<70:
+            return 'P'
+        elif asum>=40 and asum<55:
+            return 'D'
+        else:
+            return 'T'
+          
+    def printPerson(self):
+        print(f"Name: {self.lastName}, {self.firstName}")
+        print(f"ID: {self.ID}")
+        
+
+line = input().split()
