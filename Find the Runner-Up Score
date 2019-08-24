@@ -1,0 +1,9 @@
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+
+    maxv=max(arr)
+    num=arr.count(maxv)
+    for i in range(num):
+        arr.remove(maxv)
+    print(max(arr))
