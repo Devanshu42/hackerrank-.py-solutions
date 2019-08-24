@@ -1,0 +1,19 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+def printtable(n):
+    if n in range(2,21):
+        for _ in range(1,11):
+            result=n*_
+            print(f"{n} x {_} = {result}")
+
+
+if __name__ == '__main__':
+    n = int(input())
+    printtable(n)
+
