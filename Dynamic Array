@@ -1,0 +1,18 @@
+
+n, m = [int(i)  for i in input().split()] 
+list_of_sequence = []
+for i in range(n):
+    list_of_sequence.append([])
+lastans = 0   
+for i in range(m):
+    
+    p,q,r = [int(i)  for i in input().split()] 
+    if p == 1:
+        index = (q ^ lastans) % n
+        list_of_sequence[index].append(r)
+    elif p == 2:
+        index = index = (q ^ lastans) % n
+        element_index = r % len(list_of_sequence[index])
+        value = list_of_sequence[index][element_index]
+        lastans = value   
+        print(value)
