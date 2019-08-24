@@ -1,0 +1,10 @@
+n = int(input())
+
+arr = list(input().rstrip().split())
+
+revarr=[]
+
+arr.reverse()
+revarr=[a for a in arr]
+outstr=' '.join((revarr))
+print(outstr)
