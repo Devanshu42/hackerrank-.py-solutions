@@ -1,0 +1,13 @@
+#Day 1 of 30 Days of Code
+
+i1=0
+d1=0.0
+s1=''
+
+i1=int(input())
+d1=float(input())
+s1=input()
+
+print(i+i1)
+print(d+d1)
+print(s+s1)
