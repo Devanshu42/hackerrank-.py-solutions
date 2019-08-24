@@ -1,0 +1,23 @@
+mydict={}
+
+for _ in range(int(input())):
+    name = input()
+    score = float(input())
+    mydict[name]=score
+
+minval=min(mydict.values())
+
+for key, value in dict(mydict).items():
+    if value == minval:
+        del mydict[key]
+
+secminval=min(mydict.values())
+outlist=list()
+
+for key, value in dict(mydict).items():
+    if value == secminval:
+        outlist.append(key)
+
+outlist.sort()
+for item in outlist:
+    print(item)
