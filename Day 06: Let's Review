@@ -1,0 +1,20 @@
+choice=int(input())
+mystrlist=[]
+for i in range(choice):
+    mystrlist.append(input())
+
+for item in mystrlist:
+    oddstrlist=[]
+    evenstrlist=[]
+    
+    for i in range(len(item)):
+        if i%2==0:
+            evenstrlist.append(item[i])
+        else:
+            oddstrlist.append(item[i])
+
+    oddstr=''.join(oddstrlist)
+    evenstr=''.join(evenstrlist)
+    
+    print(f"{evenstr} {oddstr}")
+    
