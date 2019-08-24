@@ -1,0 +1,17 @@
+num=int(input())
+array = list(map(int, input().split()))
+
+if len(array)==num:
+    exnum=[]
+    temp=[]
+    for item in array:
+        if not item in temp:
+            temp.append(item)
+            numcount=0
+            numcount=array.count(item)
+            appitem=numcount//2
+            exnum.append(appitem)
+    res=0
+    for item in exnum:
+        res+=item
+    print(res)
