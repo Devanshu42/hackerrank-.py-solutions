@@ -1,0 +1,33 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the breakingRecords function below.
+def breakingRecords(scores):
+    minv=scores[0]
+    maxv=scores[0]
+
+    maxscore=0
+    minscore=0
+
+    for _ in scores:
+        if _>maxv:
+            maxv=_
+            maxscore+=1
+        elif _<minv:
+            minv=_
+            minscore+=1
+    
+    print(str(maxscore)+ " "+str(minscore))
+
+if __name__ == '__main__':
+
+    n = int(input())
+
+    scores = list(map(int, input().rstrip().split()))
+
+    result = breakingRecords(scores)
