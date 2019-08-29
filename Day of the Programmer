@@ -1,0 +1,25 @@
+def checkleap(year):
+    if year<1918 and year%4==0:
+        return True
+    if year%400==0:
+        return True
+    if year%4==0 and not year%100==0:
+        return True
+    return False
+
+def dayOfProgrammer(year):
+    outdate=""
+    if checkleap(year)==True:
+        outdate="12.09."+str(year)
+    else:
+        outdate="13.09."+str(year)
+    if year==1918:
+        outdate="26.09.1918"
+    
+    print(outdate)
+
+if __name__ == '__main__':
+
+    year = int(input().strip())
+
+    result = dayOfProgrammer(year)
