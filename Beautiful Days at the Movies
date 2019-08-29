@@ -1,0 +1,24 @@
+def rev(num):
+    mystr=str(num)
+    mynewstr=mystr[::-1]
+    return int(mynewstr)
+
+def beautifulDays(i, j, k):
+    beautiful=0
+    mylist=[x for x in range(i,j+1)]
+    for _ in mylist:
+        temp=(abs(_-rev(_)))/k
+        if temp==int(temp):
+            beautiful+=1
+    print(beautiful)
+    
+if __name__ == '__main__':
+    ijk = input().split()
+
+    i = int(ijk[0])
+
+    j = int(ijk[1])
+
+    k = int(ijk[2])
+
+    result = beautifulDays(i, j, k)
