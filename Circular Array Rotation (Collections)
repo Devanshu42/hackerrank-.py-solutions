@@ -1,0 +1,33 @@
+import collections
+
+# Complete the circularArrayRotation function below.
+def circularArrayRotation(a, k, queries):
+    myarr= collections.deque(a)
+    temp=0
+    for item in range(k):
+        l=len(myarr)-1
+        temp=myarr[l]
+        myarr.pop()
+        myarr.appendleft(temp)
+
+    for item in queries:
+        print(myarr[item])
+
+if __name__ == '__main__':
+    nkq = input().split()
+
+    n = int(nkq[0])
+
+    k = int(nkq[1])
+
+    q = int(nkq[2])
+
+    a = list(map(int, input().rstrip().split()))
+
+    queries = []
+
+    for _ in range(q):
+        queries_item = int(input())
+        queries.append(queries_item)
+
+    result = circularArrayRotation(a, k, queries)
