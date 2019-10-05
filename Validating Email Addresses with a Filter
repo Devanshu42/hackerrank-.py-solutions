@@ -1,0 +1,52 @@
+def fun(s):
+    if '@' in s:
+        if list(s).count('@')>1:
+            flag=0
+            return
+        (user,b)=s.split('@')
+    else:
+        flag=0
+        return
+    if '.' in b:
+        (web,ext)=b.split('.')
+    else:
+        flag=0
+        return
+
+    flag=1
+    
+    userl=list(user)
+    if "_" in userl:
+        for item in range(userl.count("_")):
+            userl.remove('_')
+    if "-" in userl:
+        for item in range(userl.count("-")):
+            userl.remove("-")
+    
+    users=''.join(userl)
+    
+    if not users.isalnum():
+        flag=0
+    
+    if not web.isalnum():
+        flag=0
+    
+    if len(ext)>3:
+        flag=0
+    
+
+    if flag==1:
+        return s
+
+def filter_mail(emails):
+    return list(filter(fun, emails))
+
+if __name__ == '__main__':
+    n = int(input())
+    emails = []
+    for _ in range(n):
+        emails.append(input())
+
+filtered_emails = filter_mail(emails)
+filtered_emails.sort()
+print(filtered_emails)
