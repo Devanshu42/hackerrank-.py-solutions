@@ -1,0 +1,26 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the alternatingCharacters function below.
+def alternatingCharacters(s):
+    count = 0
+    flag = -1
+    for char in s:
+        if char == flag:
+            count += 1
+        flag = char
+    print(count)
+
+
+if __name__ == '__main__':
+    q = int(input())
+
+    for q_itr in range(q):
+        s = input()
+
+        result = alternatingCharacters(s)
