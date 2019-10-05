@@ -1,0 +1,44 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+from collections import Counter
+
+# Complete the makeAnagram function below.
+def makeAnagram(a, b):
+    common=list(set(a+b))
+    lista=list(a)
+    listb=list(b)
+    common.sort()
+
+    for item in common:
+        counta=a.count(item)
+        countb=b.count(item)
+        if counta>=countb:
+            for i in range(countb):
+                lista.remove(item)
+                listb.remove(item)
+        elif countb>counta:
+            for i in range(counta):
+                lista.remove(item)
+                listb.remove(item)
+
+    return len(lista)+len(listb)      
+
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    a = input()
+
+    b = input()
+
+    res = makeAnagram(a, b)
+
+    fptr.write(str(res) + '\n')
+
+    fptr.close()
