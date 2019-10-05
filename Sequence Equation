@@ -1,0 +1,25 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the permutationEquation function below.
+def permutationEquation(lst):
+    p=dict()    
+    for item in range(len(lst)):
+        p[item+1]=lst[item]
+
+    for x in range(1,(len(lst)+1)):
+        for y in lst:
+            if p[p[y]]==x:
+                print(y) 
+
+if __name__ == '__main__':
+    n = int(input())
+
+    lst = list(map(int, input().rstrip().split()))
+
+    result = permutationEquation(lst)
